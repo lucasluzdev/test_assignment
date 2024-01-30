@@ -1,4 +1,4 @@
-# Test assessment for MailerLite
+# Test assignment for MailerLite
 
 ## TLDR
 - Download/clone the source code
@@ -8,7 +8,7 @@
 - Give me feedback, please! :)
 
 ## Description
-This project was developed as a tech assessmento for MailerLite PHP Developer position
+This project was developed as a tech assignment for MailerLite PHP Developer position
 
 ## Requirements
 The following softwares and requirements are necessary to get this project up and running:
@@ -61,6 +61,8 @@ After execute **docker-compose up** sucessfully, try to access **http://localhos
 ## Endpoints
 The following endpoints can be used to create/read/update/delete subscription information:
 
+### GetAll endpoints
+
 ```
 http://localhost:5172?pageSize=10&currentPage=1&sort=created-desc
 ```
@@ -74,6 +76,8 @@ A **GET** endpoint to retrieve subscriptions, with pagination. You can use the f
 - **currentPage** - The current page of information that will be displayed.
 - **sort** - Ordenation of information
 
+### Search endpoint
+
 ```
 http://localhost:5172/readOne?search=lucas&pageSize=10&currentPage=1&sort=created-desc
 ```
@@ -84,12 +88,16 @@ A **GET** endpoint to retrieve subscription of specific people, with pagination.
 - **currentPage** - The current page of information that will be displayed.
 - **sort** - Ordenation of information
 
+### Get by ID endpoint
+
 ```
 http://localhost:5172/readOneByID?id=uuid
 ```
 
 A **GET** endpoint to retrieve subscription of specific people, using ID as a condition:
 - **id** - User's UUID.
+
+### Create endpoint
 
 ```
 http://localhost:5172/create
@@ -106,6 +114,8 @@ A **POST** endpoint to create new subscribers. To create a new subscriber, you n
 }
 ```
 
+### Update endpoint
+
 ```
 http://localhost:5172/create
 ```
@@ -121,6 +131,8 @@ A **PUT** endpoint to update a existing subscriber. To update, you need to provi
     "status": 1 # Are you subscribed (2), or unsubscribed (1) ?
 }
 ```
+
+### Delete endpoint
 
 ```
 http://localhost:5172/delete/{uuid}
