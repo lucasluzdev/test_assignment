@@ -1,0 +1,38 @@
+version: "3"
+services:
+  php:
+    container_name: lucasluz_test_assignment_php8
+    build:
+      dockerfile: Dockerfile
+      context: ./backend
+    ports:
+      - "5172:80"
+    # - "443:443"
+    volumes:
+      - /var/www/html/vendor
+      - ./backend:/var/www/html
+    links:
+      - db
+
+  vue:
+    stdin_open: true
+    container_name: lucasluz_test_assignment_vue
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+    ports:
+      - "5173:5173"
+
+  db:
+    image: mysql:5.7
+    container_name: lucasluz_test_assignment_mysql
+    volumes:
+      - /var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=lucasluz_test_assignment
+      - MYSQL_DATABASE=lucasluz_test_assignment
+    ports:
+      - "5174:3306"

@@ -1,0 +1,17 @@
+{
+  "name": "luluz/mailerlitetest",
+  "autoload": {
+    "psr-4": {
+      "app\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Lucas Luz",
+      "email": "lucasluzdev@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.2"
+  }
+}

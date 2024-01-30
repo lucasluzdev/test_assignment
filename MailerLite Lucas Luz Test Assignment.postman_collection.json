@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "4d571e53-3b97-483e-8f76-aaff57ba3c36",
+		"name": "MailerLite Lucas Luz Test Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23800346"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Lucas\",\r\n    \"last_name\": \"Luiz\",\r\n    \"email\": \"lucasluzdev@gmail.com\",\r\n    \"status\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/create",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReadOne",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseurl}}/readOne?search=lu&pageSize=10&currentPage=1&sort=created-desc",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"readOne"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "lu"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "currentPage",
+							"value": "1"
+						},
+						{
+							"key": "sort",
+							"value": "created-desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReadOneByID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseurl}}/readOneByID?id=774162f5-aa07-4377-8988-ec2b3d1c2a05",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"readOneByID"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "774162f5-aa07-4377-8988-ec2b3d1c2a05"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReadMany",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseurl}}?pageSize=10&currentPage=1&sort=created-desc",
+					"host": [
+						"{{baseurl}}"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "currentPage",
+							"value": "1"
+						},
+						{
+							"key": "sort",
+							"value": "created-desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"id\": \"21db7497-582d-4f80-b8db-68e73f3e8fff\",\r\n      \"first_name\": \"Declano\",\r\n      \"last_name\": \"Donnelly\",\r\n      \"email\": \"Victor55@hotmail.com\",\r\n      \"status\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/update",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseurl}}/delete/7ae8098a-40e7-4daa-a2b7-2a1ad63bae3b",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"delete",
+						"7ae8098a-40e7-4daa-a2b7-2a1ad63bae3b"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "http://localhost:5172",
+			"type": "string"
+		}
+	]
+}
